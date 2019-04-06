@@ -1,0 +1,131 @@
+
+.boxworld{
+    background-color:pink;
+    /* color:white; */
+}
+
+*{
+	padding:0;
+	margin:0;
+}
+
+.wrapper {
+    font-size:75px;
+    color:black;
+}
+
+.border{
+	border-bottom:solid 4px white;
+}
+
+
+.new {
+	display:flex;
+	background-color: black;
+	align-items:center;
+	font-family: 'Merriweather', serif;
+	padding-top: 20px;
+	padding-bottom: 40px;
+    padding-left: 40px;    
+}
+
+.new ul li{
+	display:inline-block;
+	align-content: left;
+	margin-left: 80px;
+}
+
+#yellowletters {
+	color:red;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 30px;
+	text-decoration: none;
+}
+
+
+.whiteletters{
+	color:white;
+	font-weight: bold;
+	font-size:20px;
+	font-family: 'Oswald', sans-serif;
+	text-decoration: none;
+}
+
+a{
+	color:white;
+	text-decoration: none;}
+
+
+.border{
+	border-bottom:solid 4px white;
+}
+
+.border nav a:hover {
+	color: red;
+}
+
+.new {
+	display:flex;
+	background-color: black;
+	align-items:center;
+	font-family: 'Merriweather', serif;
+	padding-top: 20px;
+	padding-bottom: 40px;
+    padding-left: 40px;    
+}
+
+.boxes {
+    width: calc(90%);
+    background-color:white;
+    min-height:200px;
+    border: 3px solid pink;
+    margin-left:45px;
+    margin-top:60px;
+    /* padding:80px; */
+    font-size: 20px;
+	margin-right:50px;
+	background-color:black;
+	color: white;
+	/* background-image: url(images/periodico4.png); */
+}
+
+h6{
+    float: right;
+    padding-right: 10px;
+    margin-top: 60px;
+}
+
+
+body{
+	background-color:black;
+}
+
+
+
+<div class="boxes">
+<div class="row">
+	<div class="col">
+		{/* <img src="./images/gummybear.png" alt="..." class="rounded-circle" height="200" width="200"> */}
+		<div class='moveright'>
+			<h3> Ruth Boaz </h3>
+			<p> A hour ago </p>
+
+
+			<div class="boxes">
+				<div class="row">
+					<div class="col">
+
+					
+						<p>"For, "All people are like grass, and all their glory is like the flowers of the
+							field;the grass withers and the flowers fall," -1 Peter 1:24</p>
+					</div>
+				</div>
+				<h6> 100 likes - 30 comments </h6>
+				<h6>view all comments</h6>
+			</div>
+		</div>
+
+	</div>
+	</div>
+	</div>

@@ -1,0 +1,15 @@
+.row{
+	padding-bottom: 40px;
+}
+
+.col-sm-4{
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: black;
+}
+
+.btn{
+	width: 85%;
+	padding-left:60%;
+}
+
