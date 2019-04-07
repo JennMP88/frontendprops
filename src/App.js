@@ -7,18 +7,44 @@ import { HashRouter, Route } from 'react-router-dom';
 import data from './api';
 import Header from './components/header';
 import Home from './containers/newsfeed';
+import Signup from './containers/signup';
+import Login from './containers/login';
 import Followlist from './containers/followlist';
 import axios from 'axios'
 
 class App extends Component {
 
-  //FUNCTIONS
-  showFindPersonComponent = () => {
+  //-------------------------FUNCTIONS
+  showNewsFeeed = () => {
     return (
       data.peoplelist.map(e => (
-        <Home username={e.username} avatar={e.avatar} />
+        <Home user={e.user} avatar={e.avatar} post={e.post} likes={e.likes} commentnumber={e.commentnumber}   />
       ))
     )
+  }
+  showFollowList=()=>{
+    return(
+      data.peoplelist.map(e=>(
+        <Followlist user={e.user} avatar={e.avatar} />
+      ))
+    )
+  }
+
+  //---------------------------LOGIN
+  showLoginComponent=()=>{
+    return (
+      
+        <Login />
+      )
+    
+  }
+  //----------------------signup
+  showLoginComponent=()=>{
+    return (
+      
+        <Signup />
+      )
+    
   }
 
   render() {
@@ -28,9 +54,11 @@ class App extends Component {
           <>
             <Header />
             <div className='links-container' >
-              <Route path='/' exact component={this.showFindPersonComponent}/>
-              <Route path='/newsfeed' render={this.showFindPersonComponent} />
-              <Route path='/followlist'  />
+              <Route path='/' exact component={this.showNewsFeeed}/>
+              {/* <Route path='/newsfeed' render={this.showFindPersonComponent} /> */}
+              <Route path='/followlist'render={this.showFollowList}  />
+              <Route path='/signup'  />
+              <Route path='/login' render={this.showLoginComponent} />
             </div>
           </>
         </HashRouter>

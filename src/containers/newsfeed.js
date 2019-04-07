@@ -2,10 +2,10 @@ import React from 'react';
 // import AuthContext from '../contexts/auth';
 import '../styles/home2.css';
 // const defaultuser = require('../assets/user.png')
-const placeholder = require('../assets/placeholder.jpg')
+// const placeholder = require('../assets/placeholder.jpg')
 
-const Home = ({username,avatar}) => {
-  // console.log({username})
+const Home = ({user,avatar,post,likes, commentnumber}) => {
+  // console.log({user})
   return(
     <> 
     <div className="container">
@@ -15,16 +15,24 @@ const Home = ({username,avatar}) => {
         <img src={avatar} alt="..." className="rounded-circle" height="100" width="100" />
         <div className="col-sm-8">
          
-          <p><b> {username}  </b> </p>
-          
+          <p><b> {user}  </b> </p>
+         
           <p> An hour ago </p>
         </div>
       </div>
       <div className="row">
+      
         <div className="col-8 col-sm-6">
-          <img src={placeholder} alt="..." height="300" width="400" />
-          <h6> 100 likes - 30 comments </h6>
-          <h5>caption..</h5>
+
+        {post.map(eachpic=>(
+          <div> 
+          <h2><img src={eachpic.postpic}alt="..." height="300" width="400" /></h2>
+          <h5>{eachpic.caption}</h5>
+          </div>
+        ))}
+
+          <h6> {likes} likes -  {commentnumber} comments </h6>
+
         </div>
 
       </div>
