@@ -7,10 +7,19 @@ import '../styles/search.css';
 const FollowList = ({user,avatar}) => {
   // console.log({user})
   return(
+
+
 <>
-<p><b> {user}  </b> </p>
-<img src={avatar} alt="..." className="rounded-circle" height="100" width="100" />
-  </> 
+<div className="container border black">
+<div className="row .d-flex">
+
+<img src={avatar} alt="..." className="rounded-circle" height="200" width="200" />
+<div className="col-sm-8">
+<p>  <div className="col name"> {user}</div></p>
+</div>
+</div>
+</div>
+</>
   )
   }
 

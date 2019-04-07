@@ -88,4 +88,4 @@ const peoplelist = [
 
 
 // https://mastergolflivestream.com/images/clipart-turtle-michelangelo-15.jpg
-export default {peoplelist}
+export default peoplelist

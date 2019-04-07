@@ -1,11 +1,11 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 //--------------Header pics
-const logo = require('../assets/logo.png')
-const following =require('../assets/heart.jpg')
-const userprofile =require('../assets/person.png')
-const search=require('../assets/compass.png')
-const logout=require('../assets/exit.png')
+// const logo = require('../assets/logo.png')
+// const following =require('../assets/heart.jpg')
+// const userprofile =require('../assets/person.png')
+// const search=require('../assets/compass.png')
+// const logout=require('../assets/exit.png')
 
 
 const Header = () => {
@@ -24,6 +24,12 @@ const Header = () => {
         <li className="nav-item">
       <Link to='/followlist'>Follow</Link>
        </li>
+       <li className="nav-item">
+          <Link className="nav-link" to="/searches">Search</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/followers">Followers</Link>
+        </li>
         <li className="nav-item">
           <Link className="nav-link" to="/signup">Sign Up</Link>
         </li>

@@ -1,35 +1,79 @@
 import React, { Component } from 'react';
 import { HashRouter, Route } from 'react-router-dom';
-// import firebase from './firebase';
+import firebase from './firebase';
 
+// ---- Contexts
+import AuthContext from './contexts/auth';
+
+import peoplelist from "./api"
 
 // ---- Pages
-import data from './api';
 import Header from './components/header';
 import Home from './containers/newsfeed';
 import Signup from './containers/signup';
 import Login from './containers/login';
 import Followlist from './containers/followlist';
-import axios from 'axios'
+import Searchlist from './containers/searches';
+import Searchbox from './containers/searchbox';
 
 class App extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      user: null,
+    }
+  }
+
+  //api data retrieving for authentication portion
+  //here we are assignin unsubscribe-->given a function
+  componentDidMount() {
+    this.unsubscribe = firebase.auth().onAuthStateChanged((user) => {
+      console.log(user, this.state)
+      
+      if (user) {
+        this.setState({ user: user.email }); //user shows user is logged in--->passed to auth context
+      }
+      else {
+        this.setState({ user: null })
+      }
+    })
+  }
+
+  //invoking it to take it off memory
+  componentWillUnmount() {
+    this.unsubscribe()
+  }
+
   //-------------------------FUNCTIONS
-  showNewsFeeed = () => {
+  showNewsFeed = () => {
     return (
-      data.peoplelist.map(e => (
+      peoplelist.map(e => (
         <Home user={e.user} avatar={e.avatar} post={e.post} likes={e.likes} commentnumber={e.commentnumber}   />
       ))
     )
   }
-  showFollowList=()=>{
+  showFollowingList=()=>{
     return(
-      data.peoplelist.map(e=>(
+      peoplelist.map(e=>(
         <Followlist user={e.user} avatar={e.avatar} />
       ))
     )
   }
+  // showSearchList=()=>{
+  //   return(
+      
+  //   )
+  // }
 
+  //search
+  // showSearch=()=>{
+  //   return(
+  //     data.peoplelist.map(e=>(
+  //       <SearchList user={e.user} avatar={e.avatar} />
+  //     ))
+  //   )
+  // }
   //---------------------------LOGIN
   showLoginComponent=()=>{
     return (
@@ -47,20 +91,25 @@ class App extends Component {
     
   }
 
+  
+
   render() {
     return (
       <div>
         <HashRouter>
-          <>
+        <AuthContext.Provider value={this.state.user}>
             <Header />
             <div className='links-container' >
-              <Route path='/' exact component={this.showNewsFeeed}/>
+              <Route path='/' exact render={this.showNewsFeed}/>
               {/* <Route path='/newsfeed' render={this.showFindPersonComponent} /> */}
-              <Route path='/followlist'render={this.showFollowList}  />
+              <Route path='/followlist'render={this.showFollowingList} />
+              <Route path='/searches'  component={Searchlist}  />  
+              <Route path='/followers'render={this.showFollowList} />   
+                       
               <Route path='/signup'  />
               <Route path='/login' render={this.showLoginComponent} />
             </div>
-          </>
+          </AuthContext.Provider>
         </HashRouter>
       </div>
     );

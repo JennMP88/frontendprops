@@ -4,41 +4,55 @@ import '../styles/home2.css';
 // const defaultuser = require('../assets/user.png')
 // const placeholder = require('../assets/placeholder.jpg')
 
+// ---- Contexts
+import AuthContext from '../contexts/auth';
+
 const Home = ({user,avatar,post,likes, commentnumber}) => {
   // console.log({user})
   return(
-    <> 
-    <div className="container">
-    <div className='boxed'>
-      <div className="row">
-
-        <img src={avatar} alt="..." className="rounded-circle" height="100" width="100" />
-        <div className="col-sm-8">
-         
-          <p><b> {user}  </b> </p>
-         
-          <p> An hour ago </p>
-        </div>
-      </div>
-      <div className="row">
-      
-        <div className="col-8 col-sm-6">
-
-        {post.map(eachpic=>(
-          <div> 
-          <h2><img src={eachpic.postpic}alt="..." height="300" width="400" /></h2>
-          <h5>{eachpic.caption}</h5>
-          </div>
-        ))}
-
-          <h6> {likes} likes -  {commentnumber} comments </h6>
-
-        </div>
-
-      </div>
-    </div>
-  </div>
-  </> 
+    <AuthContext.Consumer>
+      {
+        (user) => {
+          if (user) {
+            return (<>
+              <div className="container">
+              <div className='boxed'>
+                <div className="row">
+          
+                  <img src={avatar} alt="..." className="rounded-circle" height="100" width="100" />
+                  <div className="col-sm-8">
+                   
+                    <p><b> {user}  </b> </p>
+                   
+                    <p> An hour ago </p>
+                  </div>
+                </div>
+                <div className="row">
+                
+                  <div className="col-8 col-sm-6">
+          
+                  {post.map(eachpic=>(
+                    <div> 
+                    <h2><img src={eachpic.postpic}alt="..." height="300" width="400" /></h2>
+                    <h5>{eachpic.caption}</h5>
+                    </div>
+                  ))}
+          
+                    <h6> {likes} likes -  {commentnumber} comments </h6>
+          
+                  </div>
+          
+                </div>
+              </div>
+            </div>  
+            </>)
+          } else {
+            return <h2>You are not logged in.</h2>
+          }
+        }
+      }
+    </AuthContext.Consumer>
+    
   )
   }
 
