@@ -9,7 +9,7 @@ import AuthContext from '../contexts/auth';
 const getPeopleList = searchTerm => {
     console.log(peoplelist, searchTerm)
     const searchedPeople = peoplelist.filter(person => {
-        return person.user.indexOf(searchTerm) > -1;
+        return person.username.indexOf(searchTerm) > -1;
     })
 
     return searchedPeople;
@@ -61,7 +61,7 @@ return(
                     <img src={person.avatar} alt="..." className="rounded-circle" height="200" width="200" />
                     <div className="col-sm-8">
                     <p> 
-                        <span className="col name"> {person.user}</span>
+                        <span className="col name"> {person.username}</span>
                     </p>
                     </div>
                     </div>

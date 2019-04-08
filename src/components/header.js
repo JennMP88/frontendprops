@@ -50,7 +50,9 @@ export default (props) => {
         <li className="nav-item">
           <Link className="nav-link" to="/followers">Followers</Link>
         </li>
-        
+        <li className="nav-item">
+          <Link className="nav-link" to="/userprofile">Userprofile</Link>
+        </li>
         
         <li className="nav-item">
           <Link className="nav-link" to="/logout">Logout</Link>

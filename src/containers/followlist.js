@@ -4,8 +4,8 @@ import '../styles/search.css';
 // const defaultuser = require('../assets/user.png')
 // const placeholder = require('../assets/placeholder.jpg')
 
-const FollowList = ({user,avatar}) => {
-  // console.log({user})
+const FollowList = ({username,avatar}) => {
+  // console.log({username})
   return(
 
 
@@ -15,7 +15,7 @@ const FollowList = ({user,avatar}) => {
 
 <img src={avatar} alt="..." className="rounded-circle" height="200" width="200" />
 <div className="col-sm-8">
-<p>  <div className="col name"> {user}</div></p>
+<p>  <div className="col name"> {username}</div></p>
 </div>
 </div>
 </div>

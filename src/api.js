@@ -3,7 +3,7 @@
 const peoplelist = [
     {
         id: 1, 
-        user: 'Raphael',
+        username: 'Raphael',
         avatar: "https://cdn2.content.compendiumblog.com/uploads/user/758c2424-6055-4d3e-880c-4021718d814e/2be5833d-4622-4ecf-aae1-58b4c227c2a0/Image/8a2c9a9de4555229e125db38aa2ccfc9/raphael_tmnt.jpg",
         post: [
             {
@@ -20,7 +20,7 @@ const peoplelist = [
     },   
     {
         id: 2, 
-        user: 'Mystery Ninja',
+        username: 'Mystery Ninja',
         avatar:"https://us.123rf.com/450wm/memoangeles/memoangeles1409/memoangeles140900009/31430861-stock-vector-ninja-flying-kick-clip-art-illustration-with-simple-gradients-all-in-a-single-layer-.jpg?ver=6",
         post: [
             {
@@ -37,7 +37,7 @@ const peoplelist = [
     },
     {
         id: 3, 
-        user: 'Donatello',
+        username: 'Donatello',
         avatar:"http://clipart-library.com/images/pi78o85yT.jpg",
         post: [
             {
@@ -54,7 +54,7 @@ const peoplelist = [
     
     {
         id: 4, 
-        user: 'Leonardo',
+        username: 'Leonardo',
         avatar:"https://clipartion.com/wp-content/uploads/2015/11/make-ninja-pop-valentines-clipart-free-clip-art-images.jpg",
         post: [
             {
@@ -70,7 +70,7 @@ const peoplelist = [
     }, 
     {
         id: 5, 
-        user: 'Michaelangelo',
+        username: 'Michaelangelo',
         avatar:"https://i.pinimg.com/originals/76/00/e9/7600e9d9d5e394f5b4b0df32b7cdbb1a.jpg",
         post: [
             {

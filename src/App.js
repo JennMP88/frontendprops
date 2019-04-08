@@ -15,6 +15,7 @@ import Login from './containers/login';
 import Logout from './containers/logout';
 import Followlist from './containers/followlist';
 import Searchlist from './containers/searches';
+import Userprofile from './containers/userprofile'
 // import Searchbox from './containers/searchbox';
 
 class App extends Component {
@@ -50,14 +51,14 @@ class App extends Component {
   showNewsFeed = () => {
     return (
       peoplelist.map(e => (
-        <Home user={e.user} avatar={e.avatar} post={e.post} likes={e.likes} commentnumber={e.commentnumber}   />
+        <Home username={e.username} avatar={e.avatar} post={e.post} likes={e.likes} commentnumber={e.commentnumber}   />
       ))
     )
   }
   showFollowingList=()=>{
     return(
       peoplelist.map(e=>(
-        <Followlist user={e.user} avatar={e.avatar} />
+        <Followlist username={e.username} avatar={e.avatar} />
       ))
     )
   }
@@ -98,7 +99,7 @@ class App extends Component {
               <Route path='/followlist'render={this.showFollowingList} />
               <Route path='/searches'  component={Searchlist}  />  
               <Route path='/followers'render={this.showFollowList} />   
-                       
+              <Route path='/userprofile' component={Userprofile} />        
               <Route path='/signup' component={Signup} />
               <Route path='/login' component={Login} />
               <Route path='/logout'render={this.showLogOutComponent} />
