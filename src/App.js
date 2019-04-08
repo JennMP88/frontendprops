@@ -12,9 +12,10 @@ import Header from './components/header';
 import Home from './containers/newsfeed';
 import Signup from './containers/signup';
 import Login from './containers/login';
+import Logout from './containers/logout';
 import Followlist from './containers/followlist';
 import Searchlist from './containers/searches';
-import Searchbox from './containers/searchbox';
+// import Searchbox from './containers/searchbox';
 
 class App extends Component {
 
@@ -74,23 +75,15 @@ class App extends Component {
   //     ))
   //   )
   // }
-  //---------------------------LOGIN
-  showLoginComponent=()=>{
+  
+ 
+  showLogOutComponent=()=>{
     return (
       
-        <Login />
+        <Logout />
       )
     
   }
-  //----------------------signup
-  showLoginComponent=()=>{
-    return (
-      
-        <Signup />
-      )
-    
-  }
-
   
 
   render() {
@@ -106,8 +99,9 @@ class App extends Component {
               <Route path='/searches'  component={Searchlist}  />  
               <Route path='/followers'render={this.showFollowList} />   
                        
-              <Route path='/signup'  />
-              <Route path='/login' render={this.showLoginComponent} />
+              <Route path='/signup' component={Signup} />
+              <Route path='/login' component={Login} />
+              <Route path='/logout'render={this.showLogOutComponent} />
             </div>
           </AuthContext.Provider>
         </HashRouter>

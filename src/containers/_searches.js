@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-// import AuthContext from '../contexts/auth';
+import React from 'react'
+import AuthContext from '../contexts/auth';
 import '../styles/search.css';
 // import Searchbox from './searchbox';
 
