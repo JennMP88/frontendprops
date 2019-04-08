@@ -18,25 +18,9 @@ const peoplelist = [
         email:'jenn.pzee88@gmail.com'
         
     },   
+
     {
         id: 2, 
-        username: 'Mystery Ninja',
-        avatar:"https://us.123rf.com/450wm/memoangeles/memoangeles1409/memoangeles140900009/31430861-stock-vector-ninja-flying-kick-clip-art-illustration-with-simple-gradients-all-in-a-single-layer-.jpg?ver=6",
-        post: [
-            {
-                postpic:'https://fanfest.com/wp-content/uploads/2019/02/Batman-vs.-Teenage-Mutant-Ninja-Turtles-750x450.jpg',
-                likes: '0',
-                comments: '0',
-                caption:'Batman had it coming'
-            },
-        ],
-        likes:0,
-        commentnumber:0,
-        email:'jack@gmail.com'
-        
-    },
-    {
-        id: 3, 
         username: 'Donatello',
         avatar:"http://clipart-library.com/images/pi78o85yT.jpg",
         post: [
@@ -53,7 +37,7 @@ const peoplelist = [
     },  
     
     {
-        id: 4, 
+        id: 3, 
         username: 'Leonardo',
         avatar:"https://clipartion.com/wp-content/uploads/2015/11/make-ninja-pop-valentines-clipart-free-clip-art-images.jpg",
         post: [
@@ -69,7 +53,7 @@ const peoplelist = [
         email:'immanuel@gmail.com'
     }, 
     {
-        id: 5, 
+        id: 4, 
         username: 'Michaelangelo',
         avatar:"https://i.pinimg.com/originals/76/00/e9/7600e9d9d5e394f5b4b0df32b7cdbb1a.jpg",
         post: [

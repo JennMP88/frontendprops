@@ -1,5 +1,5 @@
 import React from 'react';
-// import AuthContext from '../contexts/auth';
+import AuthContext from '../contexts/auth';
 import '../styles/search.css';
 // const defaultuser = require('../assets/user.png')
 // const placeholder = require('../assets/placeholder.jpg')
@@ -7,9 +7,12 @@ import '../styles/search.css';
 const FollowList = ({username,avatar}) => {
   // console.log({username})
   return(
+<AuthContext.Consumer>
+                {
+                    (user) => {
+                        if (user) {
+                          return (<>
 
-
-<>
 <div className="container border black">
 <div className="row .d-flex">
 
@@ -20,8 +23,16 @@ const FollowList = ({username,avatar}) => {
 </div>
 </div>
 </>
-  )
-  }
+                            )
+                        }
+                        else {
+                            return <h2>You are not logged in.</h2>
+                        }
+                    }
+                }
 
+            </AuthContext.Consumer>
+        )
+    }
 
 export default FollowList;

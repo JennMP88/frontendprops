@@ -41,8 +41,8 @@ export default (props) => {
         {/* <li className="nav-item">
           <Link className="nav-link" to="/">Home</Link>
         </li> */}
-        <li className="nav-item">
-      <Link to='/followlist'>Follow</Link>
+      <li className="nav-item">
+      <Link className="nav-link" to='/followlist'>Follow</Link>
        </li>
        <li className="nav-item">
           <Link className="nav-link" to="/searches">Search</Link>
@@ -52,6 +52,15 @@ export default (props) => {
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/userprofile">Userprofile</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/createpost">Createpost</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/viewpost">Viewpost</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/notifications">Notifications</Link>
         </li>
         
         <li className="nav-item">
@@ -87,44 +96,3 @@ export default (props) => {
   )
 }
 
-
-//-------------------------------------------
-
-// const Header = () => {
-//     return (
-//         // <div>
-//         //     <Link to='/'>Home</Link>
-//         //     <Link to='/newsfeed'>Newsfeed</Link>
-//         //     <Link to='/followlist'>Follow</Link>
-//         // </div>
-//     <>
-//     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-//       <ul className="navbar-nav">
-//         <li className="nav-item">
-//           <Link className="nav-link" to="/">Home</Link>
-//         </li>
-//         <li className="nav-item">
-//       <Link to='/followlist'>Follow</Link>
-//        </li>
-//        <li className="nav-item">
-//           <Link className="nav-link" to="/searches">Search</Link>
-//         </li>
-//         <li className="nav-item">
-//           <Link className="nav-link" to="/followers">Followers</Link>
-//         </li>
-//         <li className="nav-item">
-//           <Link className="nav-link" to="/signup">Sign Up</Link>
-//         </li>
-//         <li className="nav-item">
-//           <Link className="nav-link" to="/login">Login</Link>
-//         </li>
-//         <li className="nav-item">
-//           <Link className="nav-link" to="/logout">Logout</Link>
-//         </li>
-//       </ul>
-//     </nav>
-//  </>
-//     )
-// }
-
-// export default Header;

@@ -1,12 +1,12 @@
 import React from 'react';
 import AuthContext from '../contexts/auth';
 import '../styles/userprofile.css';
-const defaultuser = require('../assets/user.png')
+// const defaultuser = require('../assets/user.png')
 const placeholder = require('../assets/placeholder.jpg')
 
 
 
-const Userprofile = ({user}) => {
+const Userprofile = ({avatar,username,postpic}) => {
     // console.log({user})
         return (
             <AuthContext.Consumer>
@@ -16,9 +16,9 @@ const Userprofile = ({user}) => {
                             return (<>
                                 <div className="container">
                                     <div className="row .d-flex">
-                                        <img src={defaultuser} alt="..." className="rounded-circle" height="200" width="200" />
+                                        <img src={avatar} alt="..." className="rounded-circle" height="200" width="200" />
                                         <div className="col-sm-8">
-                                            <h3> {user} </h3>
+                                            <h3> {username} </h3>
                                             <p> Followers: 129 </p>
                                             <p> Following: 2</p>
                                             <p> <button type="button" className="btn btn-dark">Follow</button>  </p>
@@ -26,20 +26,9 @@ const Userprofile = ({user}) => {
                                     </div>
                                 </div>
                                 <div className="row">
-                                    <div className="col-sm-4">
-                                        <div className="card">
-                                            <div className="card-body">
-                                                <img src={placeholder} alt="..." />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-4">
-                                        <div className="card">
-                                            <div className="card-body">
-                                                <img src={placeholder} alt="..." />
-                                            </div>
-                                        </div>
-                                    </div>
+
+
+                                
                                     <div className="col-sm-4">
                                         <div className="card">
                                             <div className="card-body">
@@ -48,27 +37,8 @@ const Userprofile = ({user}) => {
                                         </div>
                                     </div>
 
-                                    <div className="col-sm-4">
-                                        <div className="card">
-                                            <div className="card-body">
-                                                <img src={placeholder} alt="..." />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-4">
-                                        <div className="card">
-                                            <div className="card-body">
-                                                <img src={placeholder} alt="..." />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-4 .mt-4">
-                                        <div className="card">
-                                            <div className="card-body">
-                                                <img src={placeholder} alt="..." />
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
+                          
                                 </div>
                             </>
                             )

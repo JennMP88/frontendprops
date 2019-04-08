@@ -14,6 +14,10 @@ import Signup from './containers/signup';
 import Login from './containers/login';
 import Logout from './containers/logout';
 import Followlist from './containers/followlist';
+import Followers from './containers/followers';
+import Createpost from './containers/createpost';
+import Viewpost from './containers/viewpost';
+import Notifications from './containers/notificationslist';
 import Searchlist from './containers/searches';
 import Userprofile from './containers/userprofile'
 // import Searchbox from './containers/searchbox';
@@ -62,22 +66,8 @@ class App extends Component {
       ))
     )
   }
-  // showSearchList=()=>{
-  //   return(
-      
-  //   )
-  // }
-
-  //search
-  // showSearch=()=>{
-  //   return(
-  //     data.peoplelist.map(e=>(
-  //       <SearchList user={e.user} avatar={e.avatar} />
-  //     ))
-  //   )
-  // }
   
- 
+
   showLogOutComponent=()=>{
     return (
       
@@ -97,9 +87,13 @@ class App extends Component {
               <Route path='/' exact render={this.showNewsFeed}/>
               {/* <Route path='/newsfeed' render={this.showFindPersonComponent} /> */}
               <Route path='/followlist'render={this.showFollowingList} />
+              <Route path='/followers'render={this.showFollowingList} />
               <Route path='/searches'  component={Searchlist}  />  
               <Route path='/followers'render={this.showFollowList} />   
-              <Route path='/userprofile' component={Userprofile} />        
+              <Route path='/userprofile' component={Userprofile} /> 
+              <Route path='/createpost' component={Createpost} /> 
+              <Route path='/viewpost' component={Viewpost} />  
+              <Route path='/notificationslist' component={Notifications} />       
               <Route path='/signup' component={Signup} />
               <Route path='/login' component={Login} />
               <Route path='/logout'render={this.showLogOutComponent} />

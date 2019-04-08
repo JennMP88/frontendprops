@@ -7,7 +7,7 @@ import '../styles/home2.css';
 // ---- Contexts
 import AuthContext from '../contexts/auth';
 
-const Home = ({user,avatar,post,likes, commentnumber}) => {
+const Home = ({username,avatar,post,likes, commentnumber}) => {
   // console.log({user})
   return(
     <AuthContext.Consumer>
@@ -22,7 +22,7 @@ const Home = ({user,avatar,post,likes, commentnumber}) => {
                   <img src={avatar} alt="..." className="rounded-circle" height="100" width="100" />
                   <div className="col-sm-8">
                    
-                    <p><b> {user}  </b> </p>
+                    <p><b> {username}  </b> </p>
                    
                     <p> An hour ago </p>
                   </div>
@@ -39,7 +39,7 @@ const Home = ({user,avatar,post,likes, commentnumber}) => {
                   ))}
           
                     <h6> {likes} likes -  {commentnumber} comments </h6>
-          
+                    <h3>View Comments</h3>
                   </div>
           
                 </div>
