@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AuthContext from '../contexts/auth';
 import '../styles/userprofile.css';
 import peoplelist from "../api"
+import userpost from "../apipost"
 const defaultuser = require('../assets/user.png')
 const placeholder = require('../assets/placeholder.jpg')
 
@@ -45,8 +46,6 @@ class Userprofile extends Component {
                                 </div>
                                 
                                 <div className="row">
-
-
 
                                     <div className="col-sm-4">
                                         <div className="card">

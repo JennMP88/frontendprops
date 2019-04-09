@@ -9,3 +9,5 @@ const userpost=[
         pictureposted:"https://i.etsystatic.com/17571381/r/il/e05616/1484303224/il_794xN.1484303224_m3aq.jpg "
     }
 ]
+
+export default userpost

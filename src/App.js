@@ -60,6 +60,14 @@ class App extends Component {
     )
   }
 
+  showPostsPosted=()=>{
+    return (
+      userpost.map(e => (
+        <Userprofile pictureposted={e.pictureposted}/>
+      ))
+    )
+  }
+
 
   showFollowingList=()=>{
     const results = []
@@ -101,7 +109,7 @@ class App extends Component {
               <Route path='/followers'render={this.showFollowingList} />
               <Route path='/searches2'  component={Search}  />  
               <Route path='/followers'render={this.showFollowList} />   
-              <Route path='/userprofile' component={Userprofile} /> 
+              <Route path='/userprofile' render={this.showPostsPosted} /> 
               <Route path='/createpost' component={Createpost} /> 
               <Route path='/viewpost' component={Viewpost} />  
               <Route path='/notificationslist' component={Notifications} />       
