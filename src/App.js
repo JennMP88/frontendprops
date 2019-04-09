@@ -18,12 +18,12 @@ import Followers from './containers/followers';
 import Createpost from './containers/createpost';
 import Viewpost from './containers/viewpost';
 import Notifications from './containers/notificationslist';
-import Searchlist from './containers/searches';
+// import Searchlist from './containers/searches';
+import Search from './containers/searches2';
 import Userprofile from './containers/userprofile'
 // import Searchbox from './containers/searchbox';
 
 class App extends Component {
-
   constructor(props) {
     super(props)
     this.state = {
@@ -72,7 +72,6 @@ class App extends Component {
       ))
     )
   }
-
   showFollow=()=>{
     const results2 = []
     for(let i = 2; i<=3; i++){
@@ -99,7 +98,7 @@ class App extends Component {
               {/* <Route path='/newsfeed' render={this.showFindPersonComponent} /> */}
               <Route path='/followlist'render={this.showFollow} />
               <Route path='/followers'render={this.showFollowingList} />
-              <Route path='/searches'  component={Searchlist}  />  
+              <Route path='/searches2'  component={Search}  />  
               <Route path='/followers'render={this.showFollowList} />   
               <Route path='/userprofile' component={Userprofile} /> 
               <Route path='/createpost' component={Createpost} /> 

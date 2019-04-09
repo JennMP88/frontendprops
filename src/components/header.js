@@ -45,7 +45,7 @@ export default (props) => {
       <Link className="nav-link" to='/followlist'>Follow</Link>
        </li>
        <li className="nav-item">
-          <Link className="nav-link" to="/searches">Search</Link>
+          <Link className="nav-link" to="/searches2">Search</Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/followers">Followers</Link>
