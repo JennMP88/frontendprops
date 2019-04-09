@@ -4,18 +4,7 @@ import peoplelist from "../api";
 import AuthContext from '../contexts/auth';
 const pictureholder = require('../assets/piclogo.png')
 
-// ---- Contexts
 
-
-
-// const getPeopleList = searchTerm => {
-//     console.log(peoplelist, searchTerm)
-//     const searchedPeople = peoplelist.filter(person => {
-//         return person.username.indexOf(searchTerm) > -1;
-//     })
-
-//     return searchedPeople;
-// }
 
 
 export default class Createpost extends React.Component { 
@@ -82,3 +71,5 @@ render(){
     )
 }
 }
+//----------
+

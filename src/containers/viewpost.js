@@ -15,13 +15,6 @@ export default class Viewpost extends React.Component {
               if (user) {
                 return (
                   <>
-                    <h2>Welcome back, {user.email}</h2>
-                    <h4>Your ID is: {user.uid}</h4>
-
-
-
-
-
                     <div className="container">
                       <div className='boxed'>
                         <div className="row">

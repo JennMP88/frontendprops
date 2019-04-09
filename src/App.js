@@ -61,9 +61,28 @@ class App extends Component {
   }
 
   showFollowingList=()=>{
+    const results = []
+    for(let i = 0; i<2; i++){
+      results.push(peoplelist[i])
+    }
+
     return(
-      peoplelist.map(e=>(
-        <Followlist username={e.username} avatar={e.avatar} />
+      results.map(e=>(
+        <Followers username={e.username} avatar={e.avatar} />
+      ))
+    )
+  }
+
+  showFollow=()=>{
+    const results2 = []
+    for(let i = 2; i<=3; i++){
+      
+      results2.push(peoplelist[i])
+    }
+    console.log(results2)
+    return(
+      results2.map(e=>(
+        <Followlist username={e.username} avatar={e.avatar}/>
       ))
     )
   }
@@ -78,7 +97,7 @@ class App extends Component {
             <div className='links-container' >
               <Route path='/' exact render={this.showNewsFeed}/>
               {/* <Route path='/newsfeed' render={this.showFindPersonComponent} /> */}
-              <Route path='/followlist'render={this.showFollowingList} />
+              <Route path='/followlist'render={this.showFollow} />
               <Route path='/followers'render={this.showFollowingList} />
               <Route path='/searches'  component={Searchlist}  />  
               <Route path='/followers'render={this.showFollowList} />   
