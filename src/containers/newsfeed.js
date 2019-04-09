@@ -1,16 +1,44 @@
-import React from 'react';
-// import AuthContext from '../contexts/auth';
+import React, {Component} from 'react';
+// import React from 'react'
+import AuthContext from '../contexts/auth';
 import '../styles/home2.css';
-// const defaultuser = require('../assets/user.png')
+const hearts = require('../assets/heart.jpg')
+const poops = require('../assets/poop.jpg')
 // const placeholder = require('../assets/placeholder.jpg')
 
-// ---- Contexts
-import AuthContext from '../contexts/auth';
 
-const Home = ({username,avatar,post,likes, commentnumber}) => {
-  // console.log({user})
-  return(
-    <AuthContext.Consumer>
+class FeedPost extends Component{
+  constructor(props){
+    super(props)
+    this.state={
+      count:0,
+      poopemoji:0
+    }
+  }
+
+
+  heartUp=(e)=>{
+    let { count } = this.state; 
+    count = count + 1; 
+    this.setState({ count });
+  }
+  
+  heartDown=(e)=>{
+    let { count,poopemoji } = this.state; 
+    count = count - 1; 
+    poopemoji=poopemoji+1
+    this.setState({ count });
+    this.setState({poopemoji})
+  }
+
+  render(){
+    console.log(this.state);
+    const {  username,avatar,post,likes, commentnumber } = this.props;
+    const{count, poopemoji}=this.state
+    return (
+      <>
+     
+      <AuthContext.Consumer>
       {
         (user) => {
           if (user) {
@@ -20,11 +48,14 @@ const Home = ({username,avatar,post,likes, commentnumber}) => {
                 <div className="row">
           
                   <img src={avatar} alt="..." className="rounded-circle" height="100" width="100" />
+                 
                   <div className="col-sm-8">
                    
-                    <p><b> {username}  </b> </p>
+                    <p><b> {username} </b> Last logged in: An hour ago </p>
                    
-                    <p> An hour ago </p>
+                    {/* <p> An hour ago </p> */}
+                    <button onClick={this.heartUp}><img src={hearts} alt="..." className="rounded-circle" height="30" width="30" />{this.state.count}</button>
+                    <button onClick={this.heartDown}><img src={poops} alt="..." className="rounded-circle" height="30" width="30" />{this.state.poopemoji}</button>  
                   </div>
                 </div>
                 <div className="row">
@@ -52,66 +83,12 @@ const Home = ({username,avatar,post,likes, commentnumber}) => {
         }
       }
     </AuthContext.Consumer>
-    
-  )
+      </>
+    )
   }
 
 
-export default Home;
+}
 
+export default FeedPost;
 
-
-//   render() {
-//     return (
-//       <div className='boxworld'>
-//         <AuthContext.Consumer>
-//           {
-//             (user) => {
-//               if (user) {
-//                 return (
-//                   <>
-//                     <h2>Welcome back, {user.email}</h2>
-//                     <h4>Your ID is: {user.uid}</h4>
-
-
-
-
-//                     <div class="container">
-//                       <div className='boxed'>
-//                         <div class="row">
-
-//                           <img src={defaultuser} alt="..." class="rounded-circle" height="100" width="100" />
-//                           <div class="col-sm-8">
-//                             <p><b> Lala Sanchez  </b> </p>
-//                             <p> An hour ago </p>
-//                           </div>
-//                         </div>
-//                         <div class="row">
-//                           <div class="col-8 col-sm-6">
-//                             <img src={placeholder} alt="..." height="300" width="400" />
-//                             <h6> 100 likes - 30 comments </h6>
-//                             <h5>caption..</h5>
-//                           </div>
-
-//                         </div>
-//                       </div>
-//                     </div>
-
-
-                  
-
-       
-
-//                   </>
-//                 )
-//               } else {
-//                 return <h2>You are not logged in.</h2>
-//               }
-//             }
-//           }
-//         </AuthContext.Consumer>
-//       </div>
-
-//     )
-//   }
-// }

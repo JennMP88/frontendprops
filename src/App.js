@@ -9,7 +9,7 @@ import peoplelist from "./api"
 
 // ---- Pages
 import Header from './components/header';
-import Home from './containers/newsfeed';
+import FeedPost from './containers/newsfeed';
 import Signup from './containers/signup';
 import Login from './containers/login';
 import Logout from './containers/logout';
@@ -39,7 +39,7 @@ class App extends Component {
       
       if (user) {
         this.setState({ user: user.email }); //user shows user is logged in--->passed to auth context
-      }
+      } 
       else {
         this.setState({ user: null })
       }
@@ -55,10 +55,11 @@ class App extends Component {
   showNewsFeed = () => {
     return (
       peoplelist.map(e => (
-        <Home username={e.username} avatar={e.avatar} post={e.post} likes={e.likes} commentnumber={e.commentnumber}   />
+        <FeedPost username={e.username} avatar={e.avatar} post={e.post} likes={e.likes} commentnumber={e.commentnumber}   />
       ))
     )
   }
+
   showFollowingList=()=>{
     return(
       peoplelist.map(e=>(
@@ -66,16 +67,7 @@ class App extends Component {
       ))
     )
   }
-  
 
-  showLogOutComponent=()=>{
-    return (
-      
-        <Logout />
-      )
-    
-  }
-  
 
   render() {
     return (
@@ -96,7 +88,7 @@ class App extends Component {
               <Route path='/notificationslist' component={Notifications} />       
               <Route path='/signup' component={Signup} />
               <Route path='/login' component={Login} />
-              <Route path='/logout'render={this.showLogOutComponent} />
+              <Route path='/logout'component={Logout} />
             </div>
           </AuthContext.Provider>
         </HashRouter>

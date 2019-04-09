@@ -8,8 +8,7 @@ const peoplelist = [
         post: [
             {
                 postpic:"https://i.ytimg.com/vi/RDzwoWID94c/hqdefault.jpg",
-                likes: 'Coding',
-                comments: 'I write code to do stuff',
+                comments: 'yesterday was fun, thanks for the invite',
                 caption:'feel so beat guys especially after yesterday'
             },
         ],
@@ -26,8 +25,7 @@ const peoplelist = [
         post: [
             {
                 postpic:'https://i.pinimg.com/originals/93/9d/2e/939d2e4a66489fb20553e91960fe3631.jpg',
-                likes: '0',
-                comments: '0',
+                comments: 'lets go get some pizza',
                 caption:'haha baby Michaelangelo'
             },
         ],
@@ -43,8 +41,7 @@ const peoplelist = [
         post: [
             {
                 postpic:'https://i.ytimg.com/vi/eoXcDLikPLA/maxresdefault.jpg',
-                likes: '0',
-                comments: '0',
+                 comments: 'blah blah blah blah',
                 caption:'T-U-R-T-L-E Powahhh'
             },
         ],
@@ -59,8 +56,7 @@ const peoplelist = [
         post: [
             {
                 postpic:'https://i.gifer.com/jDZ.gif',
-                likes: '0',
-                comments: '0',
+                comments: 'blah blah',
                 caption:'this was taken yesterday'
             },
         ],
