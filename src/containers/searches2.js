@@ -46,6 +46,8 @@ class Search extends Component {
 //     }
 
 onNameChange = e => {
+    // const {searchTerm}=this.state
+    // searchTerm.toLowerCase()
     this.setState({searchTerm: e.target.value})
 }
 

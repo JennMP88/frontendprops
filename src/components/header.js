@@ -42,7 +42,7 @@ export default (props) => {
           <Link className="nav-link" to="/">Home</Link>
         </li> */}
       <li className="nav-item">
-      <Link className="nav-link" to='/followlist'>Follow</Link>
+      <Link className="nav-link" to='/followlist'>Following</Link>
        </li>
        <li className="nav-item">
           <Link className="nav-link" to="/searches2">Search</Link>

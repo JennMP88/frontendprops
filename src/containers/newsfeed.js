@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
-// import React from 'react'
 import AuthContext from '../contexts/auth';
 import '../styles/home2.css';
 const hearts = require('../assets/heart.jpg')
 const poops = require('../assets/poop.jpg')
-// const placeholder = require('../assets/placeholder.jpg')
+
 
 
 class FeedPost extends Component{

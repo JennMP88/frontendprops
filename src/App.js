@@ -6,6 +6,7 @@ import firebase from './firebase';
 import AuthContext from './contexts/auth';
 
 import peoplelist from "./api"
+import userpost from "./apipost"
 
 // ---- Pages
 import Header from './components/header';
@@ -18,10 +19,9 @@ import Followers from './containers/followers';
 import Createpost from './containers/createpost';
 import Viewpost from './containers/viewpost';
 import Notifications from './containers/notificationslist';
-// import Searchlist from './containers/searches';
 import Search from './containers/searches2';
 import Userprofile from './containers/userprofile'
-// import Searchbox from './containers/searchbox';
+
 
 class App extends Component {
   constructor(props) {
@@ -60,9 +60,10 @@ class App extends Component {
     )
   }
 
+
   showFollowingList=()=>{
     const results = []
-    for(let i = 0; i<2; i++){
+    for(let i = 1; i<2; i++){
       results.push(peoplelist[i])
     }
 
