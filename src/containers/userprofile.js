@@ -18,15 +18,25 @@ class Userprofile extends Component {
         }
     }
 
-    followingPeople=(e)=>{
-        let {following}=this.state
-        following=following+1
-        this.setState({following})
-    } 
+    followingPeople = (e) => {
+        let { following } = this.state
+        following = following + 1
+        this.setState({ following })
+    }
+    showPostsPosted=(e)=>{
+        const {pictureposted}=this.props
+        return (
+          userpost.map=(e) => (
+            {pictureposted}
+          ))
+      }
+    
     render() {
         console.log(this.state)
         const { following } = this.state
-        const { username, avatar,post,pictureposted } = this.props
+        const { username, avatar, post, pictureposted } = this.props
+        console.log('props', this.props.pictureposted)
+        console.log(userpost)
         return (
             <AuthContext.Consumer>
                 {
@@ -44,21 +54,26 @@ class Userprofile extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                
-                                <div className="row">
 
-                                    <div className="col-sm-4">
-                                        <div className="card">
-                                            <div className="card-body">
+                                <div className="card-wrapper">
+                                    {/* <div className="col-sm-4-test">
+                                        <div className="card-test">
+                                            { */}
+                                            {
+                                                userpost.map((e, i) => {
+                                                    return (
+                                                        <div className="card-body-test" key={i}>
+                                                            <img className="single-img" src={e.pictureposted} />
+                                                            
+                                                        </div>
+                                                    )
+                                                })
+                                            }
+                                        {/* </div>
+                                    </div> */}
 
-                                            {/* map here */}
-                                                <img src={pictureposted} alt="..." />
-                                            </div>
-                                        </div>
-                                    </div>
-                               
 
-                                {/* {post.map(eachpic=>(
+                                    {/* {post.map(eachpic=>(
                                     <div className="col-sm-4">
                                         <div className="card">
                                             <div className="card-body">
@@ -77,6 +92,7 @@ class Userprofile extends Component {
                             return <h2>You are not logged in.</h2>
                         }
                     }
+                  
                 }
 
             </AuthContext.Consumer>

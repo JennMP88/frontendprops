@@ -52,6 +52,8 @@ class App extends Component {
   }
 
   //-------------------------FUNCTIONS
+
+//Feedpost
   showNewsFeed = () => {
     return (
       peoplelist.map(e => (
@@ -60,15 +62,16 @@ class App extends Component {
     )
   }
 
-  showPostsPosted=()=>{
-    return (
-      userpost.map(e => (
-        <Userprofile pictureposted={e.pictureposted}/>
-      ))
-    )
-  }
+// //Userprofile
+//   showPostsPosted=()=>{
+//     return (
+//       userpost.map(e => (
+//         <Userprofile pictureposted={e.pictureposted} img_title={e.img_title}/>
+//       ))
+//     )
+//   }
 
-
+//Followerslist
   showFollowingList=()=>{
     const results = []
     for(let i = 1; i<2; i++){
@@ -81,6 +84,8 @@ class App extends Component {
       ))
     )
   }
+
+//Following
   showFollow=()=>{
     const results2 = []
     for(let i = 2; i<=3; i++){
@@ -109,7 +114,7 @@ class App extends Component {
               <Route path='/followers'render={this.showFollowingList} />
               <Route path='/searches2'  component={Search}  />  
               <Route path='/followers'render={this.showFollowList} />   
-              <Route path='/userprofile' render={this.showPostsPosted} /> 
+              <Route path='/userprofile' component={Userprofile} /> 
               <Route path='/createpost' component={Createpost} /> 
               <Route path='/viewpost' component={Viewpost} />  
               <Route path='/notificationslist' component={Notifications} />       

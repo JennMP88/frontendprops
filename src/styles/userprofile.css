@@ -1,11 +1,33 @@
 .row{
 	padding-bottom: 40px;
+	
 }
 
-.col-sm-4{
+.card-wrapper{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+
+.col-sm-4-test{
+	justify-content: space-around;
+	width: 100%;
 	padding-top: 40px;
 	padding-bottom: 40px;
-	background-color: black;
+	/* background-color: black; */
+	border: 2px solid green;
+}
+.card-test{
+	border: 1px solid black;
+}
+
+.card-body-test{
+	width: 33%;
+	padding: 40px;
+	border: 1px solid black;
+	
+
 }
 
 .btn{
@@ -13,3 +35,9 @@
 	padding-left:60%;
 }
 
+
+.single-img{
+	width:250px;
+	height:250px;
+
+}
