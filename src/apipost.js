@@ -2,22 +2,22 @@
 
 const posts=[
     { 
-          url:"https://cdn.dribbble.com/users/18209/screenshots/2786928/mikey_tmnt_2.jpg ",
+          url:'https://i.pinimg.com/originals/93/9d/2e/939d2e4a66489fb20553e91960fe3631.jpg',
           userId:2,
           caption:"haha"
      },
 
     {
         
-        url:"https://cdn.dribbble.com/users/18209/screenshots/2786928/mikey_tmnt_2.jpg ",
+        url:'https://i.ytimg.com/vi/eoXcDLikPLA/maxresdefault.jpg',
         userId:3,
-        caption:"haha"
+        caption:"oh man"
         },
     {
        
-        url:"https://cdn.dribbble.com/users/18209/screenshots/2786928/mikey_tmnt_2.jpg ",
+        url:'https://i.gifer.com/jDZ.gif',
         userId:4,
-        caption:"haha"
+        caption:"lol"
     }
 ]
  

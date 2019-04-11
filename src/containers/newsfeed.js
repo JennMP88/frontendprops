@@ -52,19 +52,7 @@ class FeedPost extends Component {
                 return (<>
                   <div className="container">
                     <div className='boxed'>
-                      <div className="row">
-
-                        <img src={avatar} alt="..." className="rounded-circle" height="100" width="100" />
-
-                        <div className="col-sm-8">
-
-                          <p><b> {username} </b> Last logged in: An hour ago </p>
-
-                          {/* <p> An hour ago </p> */}
-                          <button onClick={this.heartUp}><img src={hearts} alt="..." className="rounded-circle" height="30" width="30" />{this.state.count}</button>
-                          <button onClick={this.heartDown}><img src={poops} alt="..." className="rounded-circle" height="30" width="30" />{this.state.poopemoji}</button>
-                        </div>
-                      </div>
+                 
                       <div className="row">
 
                         <div className="col-8 col-sm-6">
@@ -82,13 +70,16 @@ class FeedPost extends Component {
                                 </div>
                                 <img src={post.url} alt="..." height="300" width="400" />
                                 <h5>{post.caption}</h5>
-                              </div>
+                                <button onClick={this.heartUp}><img src={hearts} alt="..." className="rounded-circle" height="30" width="30" />{this.state.count}</button>
+                               <button onClick={this.heartDown}><img src={poops} alt="..." className="rounded-circle" height="30" width="30" />{this.state.poopemoji}</button>
+     
+                             </div>
                             )
                           }
                           )}
 
 
-                          
+
                           <h6> {likes} likes -  {commentnumber} comments </h6>
                           
                           <h3>View Comments</h3>
