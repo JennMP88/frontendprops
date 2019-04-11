@@ -3,9 +3,11 @@ import AuthContext from '../contexts/auth';
 import '../styles/userprofile.css';
 import peoplelist from "../api"
 import userpost from "../apipost"
-const defaultuser = require('../assets/user.png')
-const placeholder = require('../assets/placeholder.jpg')
-
+import moment from 'moment';
+import Image from '../services/images';
+import ImageService from '../services/images';
+// const defaultuser = require('../assets/user.png')
+// const placeholder = require('../assets/placeholder.jpg')
 
 
 
@@ -13,16 +15,21 @@ class Userprofile extends Component {
     constructor(props) {
         super(props)
 
+        ImageService.init();
+        const imagesArray = ImageService.getImages();
+
         this.state = {
-            following: 0
+            following: 0,
+            images:imagesArray
         }
     }
 
-    followingPeople = (e) => {
-        let { following } = this.state
-        following = following + 1
-        this.setState({ following })
-    }
+    // followingPeople = (e) => {
+    //     let { following } = this.state
+    //     following = following + 1
+    //     this.setState({ following })
+    // }
+
     showPostsPosted=(e)=>{
         const {pictureposted}=this.props
         return (
@@ -33,8 +40,9 @@ class Userprofile extends Component {
     
     render() {
         console.log(this.state)
-        const { following } = this.state
-        const { username, avatar, post, pictureposted } = this.props
+        const { following,images } = this.state
+        // username, avatar, post, pictureposted, from props dont need
+        const { timestamp } = this.props
         console.log('props', this.props.pictureposted)
         console.log(userpost)
         return (
@@ -49,22 +57,22 @@ class Userprofile extends Component {
                                         <div className="col-sm-8">
                                             <h3> {peoplelist[0].username} </h3>
                                             <p> Followers: 2 </p>
-                                            <p> Following: {following}</p>
-                                            <p> <button onClick={this.followingPeople} className="btn btn-dark">Follow</button>  </p>
+                                            <p> Following: 2</p>
+                                            <p> <button className="btn btn-dark">Follow</button>  </p>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className="card-wrapper">
-                                    {/* <div className="col-sm-4-test">
-                                        <div className="card-test">
-                                            { */}
                                             {
-                                                userpost.map((e, i) => {
+                                                images.map((e, i) => {
                                                     return (
                                                         <div className="card-body-test" key={i}>
-                                                            <img className="single-img" src={e.pictureposted} />
-                                                            
+                                                        
+                                                            <img className="single-img" src={e.url} />
+                                                                Uploaded{moment(timestamp).fromNow()}
+
+                                                                {/* return <Image image={e.url} timestamp={e.timestamp} key={i} /> */}
                                                         </div>
                                                     )
                                                 })
