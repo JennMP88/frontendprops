@@ -16,7 +16,7 @@ import Login from './containers/login';
 import Logout from './containers/logout';
 import FollowList from './containers/followlist';
 import Followers from './containers/followers';
-import Createpost from './containers/createpost';
+import Picturepost from './containers/createpost';
 import Viewpost from './containers/viewpost';
 import Notifications from './containers/notificationslist';
 import Search from './containers/searches2';
@@ -113,7 +113,7 @@ class App extends Component {
               <Route path='/searches2'  component={Search}  />  
               {/* <Route path='/followers'render={this.showFollowList} />    */}
               <Route path='/userprofile' component={Userprofile} /> 
-              <Route path='/createpost' component={Createpost} /> 
+              <Route path='/createpost' component={Picturepost} /> 
               <Route path='/viewpost' component={Viewpost} />  
               <Route path='/notificationslist' component={Notifications} />       
               <Route path='/signup' component={Signup} />
