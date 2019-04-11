@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import AuthContext from '../contexts/auth';
 import '../styles/home2.css';
+import posts from "../apipost"
+import users from "../usersapi"
 import ImageService from '../services/images';
 const hearts = require('../assets/heart.jpg')
 const poops = require('../assets/poop.jpg')
-
-
 
 
 class FeedPost extends Component{
@@ -39,7 +39,8 @@ class FeedPost extends Component{
 
   render(){
     console.log(this.state);
-    const {  username,avatar,post,likes, commentnumber } = this.props;
+    const {  username,avatar,post,likes, commentnumber,url,userId, caption } = this.props;
+    // const { username,avatar,url,userId, caption} = this.props;
     const{count, poopemoji}=this.state
     return (
       <>
