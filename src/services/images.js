@@ -12,8 +12,8 @@ ImageService.getImages = () => {
   return imageArray;
 }
 
-ImageService.saveImage = (url, timestamp) => {
-  const newImage = { url, timestamp };
+ImageService.saveImage = (url, userId,caption) => {
+  const newImage = { url, userId, caption };
   const oldImages = ImageService.getImages();
 
   oldImages.unshift(newImage);

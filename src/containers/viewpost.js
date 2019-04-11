@@ -37,7 +37,7 @@ export default class Viewpost extends React.Component {
                     </div>
 
 
-                  
+
 
                     <div className="container border black">
                       <div className="row .d-flex">

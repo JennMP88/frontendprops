@@ -1,17 +1,24 @@
 import React, {Component} from 'react';
 import AuthContext from '../contexts/auth';
 import '../styles/home2.css';
+import ImageService from '../services/images';
 const hearts = require('../assets/heart.jpg')
 const poops = require('../assets/poop.jpg')
+
 
 
 
 class FeedPost extends Component{
   constructor(props){
     super(props)
+
+    ImageService.init();
+    const imagesArray = ImageService.getImages();
+
     this.state={
       count:0,
-      poopemoji:0
+      poopemoji:0,
+      image:imagesArray
     }
   }
 

@@ -62,14 +62,15 @@ class Userprofile extends Component {
                                     </div>
                                 </div>
 
+{/* Do a link to Viewpost */}
                                 <div className="card-wrapper">
                                             {
                                                 images.map((e, i) => {
                                                     return (
                                                         <div className="card-body-test" key={i}>
                                                             <img className="single-img" src={e.url} />
-                                                                Uploaded{moment(timestamp).fromNow()}
-                                                              {/* < Picturepost input={e.input}/> */}
+                                                                {/* Uploaded{moment(timestamp).fromNow()} */}
+                                                              <p> Caption : {e.caption}  </p>
                                                         </div>
 
                                                     )
