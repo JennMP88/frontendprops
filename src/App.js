@@ -14,13 +14,19 @@ import FeedPost from './containers/newsfeed';
 import Signup from './containers/signup';
 import Login from './containers/login';
 import Logout from './containers/logout';
-import Followlist from './containers/followlist';
+import FollowList from './containers/followlist';
 import Followers from './containers/followers';
 import Createpost from './containers/createpost';
 import Viewpost from './containers/viewpost';
 import Notifications from './containers/notificationslist';
 import Search from './containers/searches2';
 import Userprofile from './containers/userprofile'
+
+// Other user pages
+import UserMichael from './containers/userMichael'
+// import Userprofile from './containers/userprofile'
+// import Userprofile from './containers/userprofile'
+
 
 
 class App extends Component {
@@ -62,43 +68,35 @@ class App extends Component {
     )
   }
 
-// //Userprofile
-//   showPostsPosted=()=>{
-//     return (
-//       userpost.map(e => (
-//         <Userprofile pictureposted={e.pictureposted} img_title={e.img_title}/>
-//       ))
-//     )
-//   }
 
 //Followerslist
-  showFollowingList=()=>{
-    const results = []
-    for(let i = 1; i<2; i++){
-      results.push(peoplelist[i])
-    }
+  // showFollowingList=()=>{
+  //   const results = []
+  //   for(let i = 1; i<2; i++){
+  //     results.push(peoplelist[i])
+  //   }
 
-    return(
-      results.map(e=>(
-        <Followers username={e.username} avatar={e.avatar} />
-      ))
-    )
-  }
+  //   return(
+  //     results.map(e=>(
+  //       <Followers username={e.username} avatar={e.avatar} />
+  //     ))
+  //   )
+  // }
 
 //Following
-  showFollow=()=>{
-    const results2 = []
-    for(let i = 2; i<=3; i++){
+  // showFollow=()=>{
+  //   const results2 = []
+  //   for(let i = 2; i<=3; i++){
       
-      results2.push(peoplelist[i])
-    }
-    console.log(results2)
-    return(
-      results2.map(e=>(
-        <Followlist username={e.username} avatar={e.avatar}/>
-      ))
-    )
-  }
+  //     results2.push(peoplelist[i])
+  //   }
+  //   console.log(results2)
+  //   return(
+  //     results2.map(e=>(
+  //       <Followlist username={e.username} avatar={e.avatar}/>
+  //     ))
+  //   )
+  // }
 
 
   render() {
@@ -110,10 +108,10 @@ class App extends Component {
             <div className='links-container' >
               <Route path='/' exact render={this.showNewsFeed}/>
               {/* <Route path='/newsfeed' render={this.showFindPersonComponent} /> */}
-              <Route path='/followlist'render={this.showFollow} />
-              <Route path='/followers'render={this.showFollowingList} />
+              <Route path='/followlist'component={FollowList} />
+              <Route path='/followers'component={Followers} />
               <Route path='/searches2'  component={Search}  />  
-              <Route path='/followers'render={this.showFollowList} />   
+              {/* <Route path='/followers'render={this.showFollowList} />    */}
               <Route path='/userprofile' component={Userprofile} /> 
               <Route path='/createpost' component={Createpost} /> 
               <Route path='/viewpost' component={Viewpost} />  
@@ -121,6 +119,14 @@ class App extends Component {
               <Route path='/signup' component={Signup} />
               <Route path='/login' component={Login} />
               <Route path='/logout'component={Logout} />
+           
+        {/* OTHER USER PROFILE */}
+
+         <Route path='/userMichael' component={UserMichael} />
+         {/* <Route path='/userDona' component={UserDonatello} /> */}
+         {/* <Route path='/userLeo' component={Leonardo} /> */}
+  
+           
             </div>
           </AuthContext.Provider>
         </HashRouter>

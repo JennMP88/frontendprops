@@ -24,31 +24,13 @@ class Search extends Component {
  
 }
   
-// onNameChange = (e) => {
-        
-//     const typed = e.target.value;
-//     const apiList = (list) => {
-//       const results = this.state.peoplelist.filter(peoplelist => peoplelist.toLowerCase().includes(list)) //the e is the list
-//       this.setState({ display: results })
-//     }
-//     if (typed.length === 0) {
-//       this.setState({ display: [] })
-//     }
-//     else if (isNaN(typed)) {
-//       apiList(typed)
-//     }
-//     else {
-//       const index = Number(typed) - 1
-//       const results = [this.state.peoplelist[index]]
-//       this.setState({ display: results })
 
-//       this.setState({ peoplelist: e.target.value })
-//     }
 
 onNameChange = e => {
     // const {searchTerm}=this.state
     // searchTerm.toLowerCase()
     this.setState({searchTerm: e.target.value})
+    //do same thing when i get data from array
 }
 
 doSearch = e => {
