@@ -4,6 +4,7 @@ import '../styles/home2.css';
 import posts from "../apipost"
 import users from "../usersapi"
 import ImageService from '../services/images';
+// import Picturepost, {newImage} from '../containers/createpost' //--here
 const hearts = require('../assets/heart.jpg')
 const poops = require('../assets/poop.jpg')
 
@@ -18,10 +19,15 @@ class FeedPost extends Component {
     this.state = {
       count: 0,
       poopemoji: 0,
-      image: imagesArray
+      images: imagesArray
     }
   }
 
+  // componentDidMount() {
+  //   this.setState({
+  //       image: Picturepost,
+  //   });
+  // }
 
   heartUp = (e) => {
     let { count } = this.state;
@@ -41,7 +47,7 @@ class FeedPost extends Component {
     console.log(this.state);
     const { username, avatar, post, likes, commentnumber, url, userId, caption } = this.props;
     // const { username,avatar,url,userId, caption} = this.props;
-    const { count, poopemoji } = this.state
+    const { count, poopemoji,images } = this.state
     return (
       <>
 
@@ -58,7 +64,7 @@ class FeedPost extends Component {
                         <div className="col-8 col-sm-6">
 
                           {/* map through user and post to link */}
-
+  
                           {posts.map(post => {
                             const {avatar,username}=users[post.userId]
 
@@ -72,19 +78,12 @@ class FeedPost extends Component {
                                 <h5>{post.caption}</h5>
                                 <button onClick={this.heartUp}><img src={hearts} alt="..." className="rounded-circle" height="30" width="30" />{this.state.count}</button>
                                <button onClick={this.heartDown}><img src={poops} alt="..." className="rounded-circle" height="30" width="30" />{this.state.poopemoji}</button>
-     
+                               <h3>View Comments</h3>
                              </div>
                             )
                           }
                           )}
-
-
-
-                          <h6> {likes} likes -  {commentnumber} comments </h6>
-                          
-                          <h3>View Comments</h3>
                         </div>
-
                       </div>
                     </div>
                   </div>

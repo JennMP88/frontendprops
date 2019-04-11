@@ -56,7 +56,7 @@ class Userprofile extends Component {
                                         <div className="col-sm-8">
                                             <h3> {peoplelist[0].username} </h3>
                                             <p> Followers: 2 </p>
-                                            <p> Following: 2</p>
+                                            <p> Following: 1</p>
                                             <p> <button className="btn btn-dark">Follow</button>  </p>
                                         </div>
                                     </div>

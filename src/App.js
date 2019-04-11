@@ -4,7 +4,6 @@ import firebase from './firebase';
 
 // ---- Contexts
 import AuthContext from './contexts/auth';
-
 import peoplelist from "./api"
 import userpost from "./apipost"
 
