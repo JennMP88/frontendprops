@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import AuthContext from '../contexts/auth';
 import '../styles/home2.css';
 import posts from "../apipost"
@@ -8,88 +8,102 @@ const hearts = require('../assets/heart.jpg')
 const poops = require('../assets/poop.jpg')
 
 
-class FeedPost extends Component{
-  constructor(props){
+class FeedPost extends Component {
+  constructor(props) {
     super(props)
 
     ImageService.init();
     const imagesArray = ImageService.getImages();
 
-    this.state={
-      count:0,
-      poopemoji:0,
-      image:imagesArray
+    this.state = {
+      count: 0,
+      poopemoji: 0,
+      image: imagesArray
     }
   }
 
 
-  heartUp=(e)=>{
-    let { count } = this.state; 
-    count = count + 1; 
+  heartUp = (e) => {
+    let { count } = this.state;
+    count = count + 1;
     this.setState({ count });
-  }
-  
-  heartDown=(e)=>{
-    let { count,poopemoji } = this.state; 
-    count = count - 1; 
-    poopemoji=poopemoji+1
-    this.setState({ count });
-    this.setState({poopemoji})
   }
 
-  render(){
+  heartDown = (e) => {
+    let { count, poopemoji } = this.state;
+    count = count - 1;
+    poopemoji = poopemoji + 1
+    this.setState({ count });
+    this.setState({ poopemoji })
+  }
+
+  render() {
     console.log(this.state);
-    const {  username,avatar,post,likes, commentnumber,url,userId, caption } = this.props;
+    const { username, avatar, post, likes, commentnumber, url, userId, caption } = this.props;
     // const { username,avatar,url,userId, caption} = this.props;
-    const{count, poopemoji}=this.state
+    const { count, poopemoji } = this.state
     return (
       <>
-     
-      <AuthContext.Consumer>
-      {
-        (user) => {
-          if (user) {
-            return (<>
-              <div className="container">
-              <div className='boxed'>
-                <div className="row">
-          
-                  <img src={avatar} alt="..." className="rounded-circle" height="100" width="100" />
-                 
-                  <div className="col-sm-8">
-                   
-                    <p><b> {username} </b> Last logged in: An hour ago </p>
-                   
-                    {/* <p> An hour ago </p> */}
-                    <button onClick={this.heartUp}><img src={hearts} alt="..." className="rounded-circle" height="30" width="30" />{this.state.count}</button>
-                    <button onClick={this.heartDown}><img src={poops} alt="..." className="rounded-circle" height="30" width="30" />{this.state.poopemoji}</button>  
-                  </div>
-                </div>
-                <div className="row">
-                
-                  <div className="col-8 col-sm-6">
-          
-                  {post.map(eachpic=>(
-                    <div> 
-                    <h2><img src={eachpic.postpic}alt="..." height="300" width="400" /></h2>
-                    <h5>{eachpic.caption}</h5>
+
+        <AuthContext.Consumer>
+          {
+            (user) => {
+              if (user) {
+                return (<>
+                  <div className="container">
+                    <div className='boxed'>
+                      <div className="row">
+
+                        <img src={avatar} alt="..." className="rounded-circle" height="100" width="100" />
+
+                        <div className="col-sm-8">
+
+                          <p><b> {username} </b> Last logged in: An hour ago </p>
+
+                          {/* <p> An hour ago </p> */}
+                          <button onClick={this.heartUp}><img src={hearts} alt="..." className="rounded-circle" height="30" width="30" />{this.state.count}</button>
+                          <button onClick={this.heartDown}><img src={poops} alt="..." className="rounded-circle" height="30" width="30" />{this.state.poopemoji}</button>
+                        </div>
+                      </div>
+                      <div className="row">
+
+                        <div className="col-8 col-sm-6">
+
+                          {/* map through user and post to link */}
+
+                          {posts.map(post => {
+                            const {avatar,username}=users[post.userId]
+
+                            return (
+                              <div>
+                                <div className='topnewsfeed'>
+                                  <img src={avatar} alt="..." className="rounded-circle" height="100" width="100" />
+                                  <p><b> {username} </b> Last logged in: An hour ago </p>
+                                </div>
+                                <img src={post.url} alt="..." height="300" width="400" />
+                                <h5>{post.caption}</h5>
+                              </div>
+                            )
+                          }
+                          )}
+
+
+                          
+                          <h6> {likes} likes -  {commentnumber} comments </h6>
+                          
+                          <h3>View Comments</h3>
+                        </div>
+
+                      </div>
                     </div>
-                  ))}
-          
-                    <h6> {likes} likes -  {commentnumber} comments </h6>
-                    <h3>View Comments</h3>
                   </div>
-          
-                </div>
-              </div>
-            </div>  
-            </>)
-          } else {
-            return <h2>You are not logged in.</h2>
+                </>)
+              } else {
+                return <h2>You are not logged in.</h2>
+              }
+            }
           }
-        }
-      }
-    </AuthContext.Consumer>
+        </AuthContext.Consumer>
       </>
     )
   }

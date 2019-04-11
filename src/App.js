@@ -60,13 +60,13 @@ class App extends Component {
   //-------------------------FUNCTIONS
 
 //Feedpost
-  showNewsFeed = () => {
-    return (
-      peoplelist.map(e => (
-        <FeedPost username={e.username} avatar={e.avatar} post={e.post} likes={e.likes} commentnumber={e.commentnumber}   />
-      ))
-    )
-  }
+  // showNewsFeed = () => {
+  //   return (
+  //     peoplelist.map(e => (
+  //       <FeedPost username={e.username} avatar={e.avatar} post={e.post} likes={e.likes} commentnumber={e.commentnumber}   />
+  //     ))
+  //   )
+  // }
 
 
 //Followerslist
@@ -106,7 +106,7 @@ class App extends Component {
         <AuthContext.Provider value={this.state.user}>
             <Header />
             <div className='links-container' >
-              <Route path='/' exact render={this.showNewsFeed}/>
+              <Route path='/' exact component={FeedPost}/>
               {/* <Route path='/newsfeed' render={this.showFindPersonComponent} /> */}
               <Route path='/followlist'component={FollowList} />
               <Route path='/followers'component={Followers} />
