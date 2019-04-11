@@ -6,8 +6,7 @@ import userpost from "../apipost"
 import moment from 'moment';
 import Image from '../services/images';
 import ImageService from '../services/images';
-// const defaultuser = require('../assets/user.png')
-// const placeholder = require('../assets/placeholder.jpg')
+import Picturepost from '../containers/createpost'
 
 
 
@@ -68,30 +67,14 @@ class Userprofile extends Component {
                                                 images.map((e, i) => {
                                                     return (
                                                         <div className="card-body-test" key={i}>
-                                                        
                                                             <img className="single-img" src={e.url} />
                                                                 Uploaded{moment(timestamp).fromNow()}
-
-                                                                {/* return <Image image={e.url} timestamp={e.timestamp} key={i} /> */}
+                                                              {/* < Picturepost input={e.input}/> */}
                                                         </div>
+
                                                     )
                                                 })
                                             }
-                                        {/* </div>
-                                    </div> */}
-
-
-                                    {/* {post.map(eachpic=>(
-                                    <div className="col-sm-4">
-                                        <div className="card">
-                                            <div className="card-body">
-                                                <img src={eachpic.postpic} alt="..." />
-                                            </div>
-                                        </div>
-                                    </div>
-                                 ))} */}
-
-
                                 </div>
                             </>)
                         }

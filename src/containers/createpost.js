@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {Component} from 'react'
 import '../styles/search.css';
 import peoplelist from "../api";
 import AuthContext from '../contexts/auth';
 import * as firebase from 'firebase';
 import ImageService from '../services/images';
-const pictureholder = require('../assets/piclogo.png')
+
 
 //initialized firebase 
 const config = {
@@ -17,8 +17,16 @@ const config = {
 }; 
 // firebase.initializeApp(config);
 
-export default class Picturepost extends React.Component {
+export default class Picturepost extends Component {
+    constructor(props){
+        super(props)
+            this.state={
+                input:''
+            }
+    }
 
+
+//------------STORING FUNCTIONS FOR FIREBASE STUFF 
     saveImage = (url) => {
       const date = Date();
   
@@ -51,8 +59,20 @@ export default class Picturepost extends React.Component {
       
     }
   
+// Function To post a comment
+    postingCommentLabel=(e)=>{
+        this.setState({input:e.target.value})
+    }
+
+    postPosted=(e)=>{
+        const{input}=this.state
+        this.setState({input:input})
+    }
+
+    
     render() {
-  
+        console.log(this.state)
+        const{input}=this.state
       return (
         <div className='container'>
           <div className="input-group mb-3">
@@ -60,6 +80,14 @@ export default class Picturepost extends React.Component {
               <input type="file" className="custom-file-input" onChange={this.handleFileInput} />
               <label className="custom-file-label">Upload Image</label>
             </div>
+            <div className="col-sm-8">
+        <form>
+            <div className="form-group">
+                    <input type='text' value={this.state.input} onChange={this.postingCommentLabel}  />
+                    <button type="button" onClick={this.postPosted}className="button">Post</button>
+                </div>
+            </form>
+        </div>
           </div>
         </div>
       );
