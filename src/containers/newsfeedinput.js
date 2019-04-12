@@ -10,6 +10,14 @@ class Input extends Component {
   }
 
 
+
+  componentWillMount() {
+    localStorage.getItem('display') && this.setState({
+        display: JSON.parse(localStorage.getItem('display')),
+        input: ''
+    })
+}
+
   handleInput = (e) => {
     this.setState({ input: e.target.value })
   }
@@ -31,28 +39,25 @@ class Input extends Component {
       
       <div> 
 
+          <p> <input type='text' value={this.state.input} onChange={this.handleInput} />
+          
+          <button onClick={this.clickerClicked}>Submit</button></p>
+
+       
+        <div class="input-group">
+
+          <p> <div class="form-control w-100 p-3">{display}</div> </p>
+
+        </div>
         {
           display.map((e,i)=>{
 
             return(<>
-
-          <p>    <input type='text' value={this.state.input} onChange={this.handleInput} />
-          <button onClick={this.clickerClicked}>Submit</button></p>
-
-        {/* DISPLAY THE INFO HERE  */}
-        {/* ViewComments*/}
-        <div class="input-group">
-
-          <p> <div class="form-control">{display[0]}</div> </p>
-
-        </div>
+            <p>  {e.display}   </p>   
+              
             </>)
           })
-
-
-
-        } 
-     
+        }  
         </div>
       </>
     )
