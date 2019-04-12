@@ -20,6 +20,7 @@ import Viewpost from './containers/viewpost';
 import Notifications from './containers/notificationslist';
 import Search from './containers/searches2';
 import Userprofile from './containers/userprofile'
+import Input from './containers/newsfeedinput'
 
 // Other user pages
 import UserMichael from './containers/userMichael'

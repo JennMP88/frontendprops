@@ -33,7 +33,9 @@ export default class Login extends React.Component {
     this.unsubscribe = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         // ..... DO YOUR LOGGED IN LOGIC
-        //--------------------WHAT IS THIS.PROPS.HISTORY.PUSH FOR ?
+       
+
+
         this.props.history.push('/')
       }
       else {
