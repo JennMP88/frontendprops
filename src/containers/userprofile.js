@@ -62,7 +62,7 @@ class Userprofile extends Component {
                                     </div>
                                 </div>
 
-{/* Do a link to Viewpost */}
+                            {/* Do a link to Viewpost */}
                                 <div className="card-wrapper">
                                             {
                                                 images.map((e, i) => {

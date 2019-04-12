@@ -29,11 +29,12 @@ export default class Picturepost extends Component {
 
 
     //------------STORING FUNCTIONS FOR FIREBASE STUFF 
-    saveImage = (url) => {
+    saveImage = (url,userId, caption) => {
         const date = Date();
 
         ImageService.saveImage(url, date, this.state.input);
     }
+    
 
     handleImagePick = (e) => {
         this.setState({ firstFile: e.target.files[0] })

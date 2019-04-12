@@ -15,6 +15,8 @@ ImageService.getImages = () => {
 ImageService.saveImage = (url, userId,caption) => {
   const newImage = { url, userId, caption };
   const oldImages = ImageService.getImages();
+  //pass the stuff from createpost to local storage in here 
+  // and link it with the userid and avatar that is currently "logged in"/ who posted it
 
   oldImages.unshift(newImage);
 

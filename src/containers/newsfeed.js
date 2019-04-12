@@ -3,6 +3,7 @@ import AuthContext from '../contexts/auth';
 import '../styles/home2.css';
 import posts from "../apipost"
 import users from "../usersapi"
+import peoplelist from "../api"
 import ImageService from '../services/images';
 // import Picturepost, {newImage} from '../containers/createpost' //--here
 const hearts = require('../assets/heart.jpg')
@@ -23,12 +24,7 @@ class FeedPost extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   this.setState({
-  //       image: Picturepost,
-  //   });
-  // }
-
+  
   heartUp = (e) => {
     let { count } = this.state;
     count = count + 1;
@@ -62,27 +58,17 @@ class FeedPost extends Component {
                       <div className="row">
 
                         <div className="col-8 col-sm-6">
-
-                          {/* map through user and post to link */}
-  
-                          {posts.map(post => {
-                            const {avatar,username}=users[post.userId]
-
-                            return (
-                              <div>
-                                <div className='topnewsfeed'>
-                                  <img src={avatar} alt="..." className="rounded-circle" height="100" width="100" />
-                                  <p><b> {username} </b> Last logged in: An hour ago </p>
-                                </div>
-                                <img src={post.url} alt="..." height="300" width="400" />
-                                <h5>{post.caption}</h5>
-                                <button onClick={this.heartUp}><img src={hearts} alt="..." className="rounded-circle" height="30" width="30" />{this.state.count}</button>
-                               <button onClick={this.heartDown}><img src={poops} alt="..." className="rounded-circle" height="30" width="30" />{this.state.poopemoji}</button>
-                               <h3>View Comments</h3>
-                             </div>
-                            )
+                        {
+                              images.map((e, i) => {
+                              return (<>
+                              <img src={peoplelist[0].avatar} alt="..." className="rounded-circle" height="100" width="100" />
+                              <p><b>{peoplelist[0].username} </b> </p>
+                              <p> <img src={e.url} alt="..." height="300" width="400" /></p>
+                              <p> Caption : {e.caption}  </p>  
+                               <button onClick={this.heartUp}><img src={hearts} alt="..." className="rounded-circle" height="30" width="30" />{this.state.count}</button>
+                               <button onClick={this.heartDown}><img src={poops} alt="..." className="rounded-circle" height="30" width="30" />{this.state.poopemoji}</button> </>)
+                               })
                           }
-                          )}
                         </div>
                       </div>
                     </div>
@@ -103,3 +89,22 @@ class FeedPost extends Component {
 
 export default FeedPost;
 
+// {posts.map(post => {
+//   const {avatar,username}=users[post.userId]
+
+//   return (
+//     <div>
+//       <div className='topnewsfeed'>
+//         <img src={avatar} alt="..." className="rounded-circle" height="100" width="100" />
+//         <p><b> {username} </b> Last logged in: An hour ago </p>
+//       </div>
+//       <img src={post.url} alt="..." height="300" width="400" />
+//       <h5>{post.caption}</h5>
+//       <button onClick={this.heartUp}><img src={hearts} alt="..." className="rounded-circle" height="30" width="30" />{this.state.count}</button>
+//      <button onClick={this.heartDown}><img src={poops} alt="..." className="rounded-circle" height="30" width="30" />{this.state.poopemoji}</button>
+//      <h3>View Comments</h3>
+//      <p>😀😀😀</p>
+//    </div>
+//   )
+// }
+// )}

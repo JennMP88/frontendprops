@@ -1,6 +1,5 @@
 
-const users={
-
+const users = {
 
   2:{username: 'Donatello',
      avatar:"http://clipart-library.com/images/pi78o85yT.jpg"
