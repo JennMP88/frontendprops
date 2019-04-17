@@ -24,8 +24,7 @@ import Input from './containers/newsfeedinput'
 
 // Other user pages
 import UserMichael from './containers/userMichael'
-// import Userprofile from './containers/userprofile'
-// import Userprofile from './containers/userprofile'
+
 
 //MY THREE APIS ARE-----> usersapi,apiposts,api.js
 
@@ -113,6 +112,7 @@ class App extends Component {
               <Route path='/searches2'  component={Search}  />  
               {/* <Route path='/followers'render={this.showFollowList} />    */}
               <Route path='/userprofile' component={Userprofile} /> 
+              {/* <Route path='/userMichael' component={UserMichael} />  */}
               <Route path='/createpost' component={Picturepost} /> 
               <Route path='/viewpost' component={Viewpost} />  
               <Route path='/notificationslist' component={Notifications} />       
@@ -123,8 +123,7 @@ class App extends Component {
         {/* OTHER USER PROFILE */}
 
          <Route path='/userMichael' component={UserMichael} />
-         {/* <Route path='/userDona' component={UserDonatello} /> */}
-         {/* <Route path='/userLeo' component={Leonardo} /> */}
+        
   
            
             </div>

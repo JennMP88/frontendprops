@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
 import AuthContext from '../contexts/auth';
 import '../styles/home2.css';
 import posts from "../apipost"
@@ -74,23 +75,30 @@ class FeedPost extends Component {
             (user) => {
               if (user) {
                 return (<>
+                
+                
                   <div className="container">
                     {/* <div className='boxed'> */}
 
                     {/* <div className="row"> */}
 
+                  
                     <div className="col-8 col-sm-6">
                       {
                         images.map((e, i) => {
                             // console.log(e)
                           return (<>
+                          <Link to = {'/userprofile'}> 
                             <img src={peoplelist[0].avatar} alt="..." className="rounded-circle" height="100" width="100" />
                             <p><b>{peoplelist[0].username} </b> </p>
+                            </Link> 
+                        <Link to = {'/viewpost'}>
                             <p> <img src={e.url} alt="..." height="300" width="400" /></p>
-                            <p> Caption : {e.caption}  </p>
+                            </Link> 
+                            <p> Caption : {e.caption} </p>
                             <p><button onClick={this.heartUp}><img src={hearts} alt="..." className="rounded-circle" height="30" width="30" />{this.state.count}</button> </p>
                             <p><button onClick={this.heartDown}><img src={poops} alt="..." className="rounded-circle" height="30" width="30" />{this.state.poopemoji}</button></p>
-                           
+                    
 
                             <Input />
 
@@ -106,9 +114,12 @@ class FeedPost extends Component {
                               <p> <div class="form-control">{display[0]}</div> </p>
                             
                             </div> */} 
-                          </>)
+                            
+                          </>
+                          )
                         })
                       }
+
 
                       
                     </div>
