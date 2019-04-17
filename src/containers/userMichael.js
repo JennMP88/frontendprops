@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import AuthContext from '../contexts/auth';
 import '../styles/userprofile.css';
+import {Link} from 'react-router-dom'
 import peoplelist from "../api"
 import userpost from "../apipost"
-const defaultuser = require('../assets/user.png')
-const placeholder = require('../assets/placeholder.jpg')
 
 
 
@@ -13,16 +12,16 @@ class UserMichael extends Component {
     constructor(props) {
         super(props)
 
+        
+
         this.state = {
-            following: 0
+            following: 0,
+            
         }
     }
 
-    followingPeople = (e) => {
-        let { following } = this.state
-        following = following + 1
-        this.setState({ following })
-    }
+   
+
     showPostsPosted=(e)=>{
         const {pictureposted}=this.props
         return (
@@ -34,7 +33,8 @@ class UserMichael extends Component {
     render() {
         console.log(this.state)
         const { following } = this.state
-        const { username, avatar, post, pictureposted } = this.props
+        // username, avatar, post, pictureposted, from props dont need
+        const { timestamp } = this.props
         console.log('props', this.props.pictureposted)
         console.log(userpost)
         return (
@@ -48,28 +48,25 @@ class UserMichael extends Component {
                                         <img src={peoplelist[3].avatar} alt="..." className="rounded-circle" height="200" width="200" />
                                         <div className="col-sm-8">
                                             <h3> {peoplelist[3].username} </h3>
-                                            <p> Followers: 0 </p>
-                                            <p> Following: {following}</p>
-                                            <p> <button onClick={this.followingPeople} className="btn btn-dark">Follow</button>  </p>
+                                            <Link to = {'/followers'}>  <p> Followers: 0 </p></Link>
+                                            <p> Following: 1</p>
+                                            <p> <button className="btn btn-dark">Follow</button>  </p>
                                         </div>
                                     </div>
                                 </div>
 
+                                    {/* Do a link to Viewpost */}
                                 <div className="card-wrapper">
-                                    {/* <div className="col-sm-4-test">
-                                        <div className="card-test">
-                                            { */}
-                                            {
-                                                userpost.map((e, i) => {
-                                                    return (
-                                                        <div className="card-body-test" key={i}>
-                                                            <img className="single-img" src={e.pictureposted} />
-                                                            
+                        
+                                                   
+                                                        <div className="card-body-test">
+                                                            <img className="single-img" src={peoplelist[3].avatar} />
+                                                                {/* Uploaded{moment(timestamp).fromNow()} */}
+                                                              <p> Caption : finally signed up </p>
                                                         </div>
-                                                    )
-                                                })
-                                            }
 
+                                                    
+                                            
                                 </div>
                             </>)
                         }

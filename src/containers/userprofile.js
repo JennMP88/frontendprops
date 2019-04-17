@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AuthContext from '../contexts/auth';
 import '../styles/userprofile.css';
+import {Link} from 'react-router-dom'
 import peoplelist from "../api"
 import userpost from "../apipost"
 import moment from 'moment';
@@ -41,7 +42,7 @@ class Userprofile extends Component {
         console.log(this.state)
         const { following,images } = this.state
         // username, avatar, post, pictureposted, from props dont need
-        const { timestamp } = this.props
+        // const { timestamp } = this.props
         console.log('props', this.props.pictureposted)
         console.log(userpost)
         return (
@@ -55,9 +56,9 @@ class Userprofile extends Component {
                                         <img src={peoplelist[0].avatar} alt="..." className="rounded-circle" height="200" width="200" />
                                         <div className="col-sm-8">
                                             <h3> {peoplelist[0].username} </h3>
-                                            <p> Followers: 2 </p>
+                                            <Link to = {'/followers'}>  <p> Followers: 1 </p></Link>
                                             <p> Following: 1</p>
-                                            <p> <button className="btn btn-dark">Follow</button>  </p>
+                                            <Link to = {'/followlist'}> <p> <button className="btn btn-dark">Follow</button>  </p> </Link> 
                                         </div>
                                     </div>
                                 </div>
@@ -67,10 +68,13 @@ class Userprofile extends Component {
                                             {
                                                 images.map((e, i) => {
                                                     return (
+                                                    
                                                         <div className="card-body-test" key={i}>
-                                                            <img className="single-img" src={e.url} />
+                                                               <Link to = {'/viewpost'}>
+                                                           <img className="single-img" src={e.url} /> </Link>
                                                                 {/* Uploaded{moment(timestamp).fromNow()} */}
                                                               <p> Caption : {e.caption}  </p>
+                                                              
                                                         </div>
 
                                                     )

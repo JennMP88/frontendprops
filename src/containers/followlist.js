@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 import AuthContext from '../contexts/auth';
 import '../styles/search.css';
 import peoplelist from "../api"
@@ -14,6 +15,7 @@ const FollowList = ({username,avatar}) => {
                         if (user) {
                           return (<>
 
+<Link to = {'/userMichael'}> 
 <div className="container border black">
 <div className="row .d-flex">
 <img src={peoplelist[3].avatar} alt="..." className="rounded-circle" height="200" width="200" />
@@ -22,6 +24,7 @@ const FollowList = ({username,avatar}) => {
 </div>
 </div>
 </div>
+</Link>
 </>
                             )
                         }

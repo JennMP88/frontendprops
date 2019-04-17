@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 import AuthContext from '../contexts/auth';
 import '../styles/search.css';
 import peoplelist from "../api"
@@ -14,24 +15,25 @@ const Followers = ({username,avatar}) => {
                         if (user) {
                           return (<>
 
+<Link to = {'/userMichael'}> 
 <div className="container border black">
 <div className="row .d-flex">
-<img src={peoplelist[1].avatar} alt="..." className="rounded-circle" height="200" width="200" />
+<img src={peoplelist[3].avatar} alt="..." className="rounded-circle" height="200" width="200" />
 <div className="col-sm-8">
-<p>  <div className="col name"> {peoplelist[1].username}</div></p>
+<p>  <div className="col name"> {peoplelist[3].username}</div></p>
 </div>
 </div>
 </div>
+</Link>
 
-
-<div className="container border black">
+{/* <div className="container border black">
 <div className="row .d-flex">
 <img src={peoplelist[2].avatar} alt="..." className="rounded-circle" height="200" width="200" />
 <div className="col-sm-8">
 <p>  <div className="col name"> {peoplelist[2].username}</div></p>
 </div>
 </div>
-</div>
+</div> */}
 </>
                             )
                         }
